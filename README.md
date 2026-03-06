@@ -5,13 +5,14 @@ MVP de uma plataforma de streaming de filmes estilo Netflix/Prime Video com pain
 ## 🎯 Características
 
 ### Frontend
+- ✅ **White-Label**: Personalização de Marca, Cores e SEO via Painel Admin
+- ✅ **Monetização**: Injeção dinâmica de Google Ads via Painel Admin
 - ✅ Catálogo responsivo de filmes com grid dinâmico
 - ✅ Barra de busca e filtro por categoria
 - ✅ Player de vídeo embutido (YouTube e links diretos)
 - ✅ Página de detalhes do filme com SEO otimizado
 - ✅ Painel de administração protegido
 - ✅ Design moderno com Tailwind CSS
-- ✅ Meta tags e Open Graph para compartilhamento social
 
 ### Backend
 - ✅ API REST com Express.js
@@ -41,8 +42,8 @@ MVP de uma plataforma de streaming de filmes estilo Netflix/Prime Video com pain
 
 #### 1. Clone o repositório
 ```bash
-git clone <seu-repositorio>
-cd evangelical-streaming-mvp
+git clone https://github.com/Vitorsg27/streaming-mvp-whitelabel.git
+cd streaming-mvp-whitelabel
 ```
 
 #### 2. Instale dependências do Backend
@@ -68,7 +69,6 @@ JWT_SECRET=sua-chave-secreta-aqui
 ADMIN_USERNAME=admin
 ADMIN_PASSWORD=admin123
 DATABASE_PATH=./database.db
-GOOGLE_ADS_CLIENT_ID=seu-id-do-google-ads
 SITE_URL=http://localhost:3000
 ```
 
@@ -210,7 +210,7 @@ evangelical-streaming-mvp/
 - **Usuário**: admin
 - **Senha**: admin123
 
-⚠️ **IMPORTANTE**: Altere essas credenciais em produção!
+⚠️ **IMPORTANTE**: Após o primeiro login, acesse a aba **Segurança** no Painel Admin para alterar sua senha imediatamente! Um aviso de alerta será exibido na interface enquanto você estiver usando a senha padrão.
 
 ## 📊 Testes
 
@@ -245,20 +245,20 @@ O projeto inclui otimizações SEO:
 - ✅ robots.txt configurado
 - ✅ Componente `<Head>` para gerenciamento de meta tags por página
 
-## 📺 Google Ads
+## 📺 Google Ads & White-Label
 
-Espaços reservados para Google Ads nos seguintes locais:
-- Header (topo da página)
-- Entre cards de filmes
-- Página de player (lado da informação do filme)
-- Footer (rodapé)
+A plataforma foi construída para ser **completamente personalizável** por usuários leigos, sem precisar alterar código.
 
-Para integrar, adicione seu `client ID` no `.env` e uncommente o script no `index.html`:
+1. Faça login no **Painel de Administração**.
+2. Acesse a aba **Configurações Globais**.
+3. Você poderá alterar:
+   - **Nome do Site / SEO**
+   - **Esquema de Cores (Cor Primária e Secundária)**
+   - **Google Ads Client ID (Monetização)**
 
-```html
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
- crossorigin="anonymous"></script>
-```
+Para integrar anúncios, basta colar seu Client ID (ex: `ca-pub-XXXXXXXXXXXXXXXX`) no campo do Painel. O sistema injetará automaticamente a tag oficial do AdSense em componentes de Banner predefinidos:
+- Abaixo da listagem de vídeos na Home.
+- Na barra lateral da página de exibição do vídeo.
 
 ## 🚀 Deployment
 
